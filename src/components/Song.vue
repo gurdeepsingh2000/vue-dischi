@@ -29,11 +29,30 @@ export default {
 
         .box{
             background-color: #2E3A46;
-            padding: 10px;
+            padding: 15px;
+            height: 350px;
+            margin-bottom: 20px;
+        }
+
+        .title{
+            color:white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .author{
+            font-size:20px;
+            color: grey;
+        }
+
+        .year{
+            font-size: 18px;
+            color: grey;
         }
 
         img{
-            width:100%
+            width:100%;
+            padding-bottom: 10px
         };
     }
 
