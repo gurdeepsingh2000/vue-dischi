@@ -1,28 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id ='app'>
+        <Header />
+        <Main :Songs="Songs" />
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//IMPORTAZIONE COMPONENTI NELL'APP.VUE
+import axios from 'axios';
+import Header from './components/Header.vue';
+import Main from './components/Main.vue';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  //ESPORTAZIONE IN ALTRE COMPONENTI (RENDIAMO QUESTE COMPONENTI ACCESSIBILI AD ALTRE COMPONENTI)
+    name: 'App',
+    components:{
+      Header,
+      Main
+    },
+
+    data() {
+      return{
+        Songs: []
+      }
+    },
+    created(){    //quando abbiamo richiamato tutte le API necessarie allora Songs verrà popolato
+      axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((result) => {
+      this.Songs = result.data.response
+    })
+    }
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
