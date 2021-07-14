@@ -27,8 +27,12 @@ export default {
     created(){    //quando abbiamo richiamato tutte le API necessarie allora Songs verrà popolato
       axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((result) => {
       this.Songs = result.data.response
+      console.log(this.Songs = result.data.response)
     })
     }
 }
 </script>
 
+<style lang="scss">
+@import "./style/app.scss";
+</style>

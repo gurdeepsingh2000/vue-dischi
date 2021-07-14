@@ -1,10 +1,10 @@
 <template>
 
 <section>
-    <div class="container">
-        <div class="row">
+    <div class="container type">
+        <div class="row typeo">
             <div>
-                <Song
+                <Song class="central col-2 .justify-content-center"
                 v-for= "(Song, index) in Songs" 
                 :key= "index"  
                 :poster= "Song.poster" 
@@ -26,7 +26,7 @@ export default {
     components: {
         Song     //Componente Aggiunto
     },
-    Props: {
+    props: {
         Songs: Array, //Regitriamo l'attributo Songs(Array di oggetti pescati dall'API) in Main.vue cosi da poterci lavorare sopra
     }
 
