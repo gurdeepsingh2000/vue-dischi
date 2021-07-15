@@ -3,8 +3,8 @@
     <div id ='app'>
       <!-- Se l'array Songs non viene popolato allora faremo un display del Loader -->
        <Loader v-if="Songs.length == 0" />
-        <Header />
-        <Main :Songs="Songs" /> //
+        <Header :Songs="Songs" />
+        <Main :Songs="filteredSongs" /> //
     </div>
 </template>
 
@@ -27,18 +27,20 @@ export default {
     },
     data() {
       return{
-        Songs: [],
-      }
-    },
+        Songs: [], //Data/input dove l'utente inserirà la voce 
+        inputSong: ''
+       }
+  },
 
-
-    
 
     created(){    //quando abbiamo richiamato tutte le API necessarie allora Songs verrà popolato
       axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((result) => {
       this.Songs = result.data.response
     })
-    }
+    },
+  methods: {
+
+  }
 }
 
 </script>

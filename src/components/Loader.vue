@@ -2,7 +2,8 @@
 <template>
 <div class = "spin">
     <div class="ring">
-<div class="lds-ripple"><div></div><div></div></div> 
+<div class="lds-ripple"><div></div><div></div></div>
+<div class="text-loader">Loading...</div> 
 </div>  
 </div>
 </template>
@@ -29,7 +30,12 @@ export default {
     top:50%;
     left:50%;
     margin: 0 auto;
-    height: 100%;
+}
+
+.text-loader{
+    color:white;
+    font-size: 20px;
+    font-weight:bold
 }
 .lds-ripple {
   left: 0;

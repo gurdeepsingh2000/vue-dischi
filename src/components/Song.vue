@@ -16,7 +16,7 @@ export default {
         poster: String,
         title: String,
         author: String,
-        year: String
+        year: String,
     }
 }
 </script>
@@ -48,6 +48,12 @@ export default {
         .year{
             font-size: 18px;
             color: grey;
+        }
+
+        .genre{
+            color:grey;
+            font-size: 18px;
+
         }
 
         img{
